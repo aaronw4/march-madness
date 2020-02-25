@@ -5,6 +5,8 @@ import Stats from './enterStats';
 const Teams = () => {
     const [teams, setTeams] = useState([]);
     const [list, setList] = useState([]);
+    const [toggle, setToggle] = useState(false);
+    const [teamId, setTeamId] = useState('')
 
     useEffect(() => {
         function fetchData() {
@@ -45,18 +47,22 @@ const Teams = () => {
         newList();
     },[teams]);
 
-    function click() {
-        var element = document.getElementById('stats');
-        element.classList.toggle('stats');
+    function handleClick(id) {
+        setToggle(!toggle);
+        setTeamId(id);
     }
 
     return (
         <div>
             {list.map(team => (
                 <div key={team.id}>
-                    <button onClick={click}>Enter Stats</button>
-                    <p>{team.name}({team.wins}-{team.loses})</p>
-                    <Stats name={team.name} id='stats'/>
+                    <div>
+                        <button className='team' onClick={() => handleClick(team.id)}>Enter Stats</button>
+                        <p className='team teamName'>{team.name}({team.wins}-{team.loses})</p>
+                    </div>
+                    <div style={{display: toggle && teamId === team.id ? 'block' : 'none'}}>
+                        <Stats name={team.name}/>
+                    </div>
                 </div>
             ))}
         </div>
