@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axiosWithAuth from './axiosWithAuth';
+import Stats from './enterStats';
 
 const Teams = () => {
     const [teams, setTeams] = useState([]);
@@ -44,11 +45,18 @@ const Teams = () => {
         newList();
     },[teams]);
 
+    function click() {
+        var element = document.getElementById('stats');
+        element.classList.toggle('stats');
+    }
+
     return (
         <div>
             {list.map(team => (
                 <div key={team.id}>
+                    <button onClick={click}>Enter Stats</button>
                     <p>{team.name}({team.wins}-{team.loses})</p>
+                    <Stats name={team.name} id='stats'/>
                 </div>
             ))}
         </div>
