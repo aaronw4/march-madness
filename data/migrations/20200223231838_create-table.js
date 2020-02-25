@@ -4,7 +4,7 @@ exports.up = function(knex) {
         knex.schema
             .createTable('teams', table => {
                 table.increments();
-                table.string('Team Name')
+                table.string('TeamName')
                 table.decimal('AdjO');
                 table.decimal('AdjD');
                 table.decimal('AdjT');
