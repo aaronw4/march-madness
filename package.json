@@ -6,5 +6,25 @@
     "knex": "^0.20.10",
     "nodemon": "^2.0.2",
     "sqlite3": "^4.1.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon index.js"
+  },
+  "name": "march-madness",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronw4/march-madness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronw4/march-madness/issues"
+  },
+  "homepage": "https://github.com/aaronw4/march-madness#readme",
+  "description": ""
 }
