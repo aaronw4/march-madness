@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 
 const Stats = (props) => {
-    const [name, setName] = useState('');
+    const [name, setName] = useState();
     const [adjO, setAdjO] = useState();
     const [adjD, setAdjD] = useState();
-    const [adjT, setAdjT] = userState();
+    const [adjT, setAdjT] = useState();
 
     const handleName = e => {
         setName(e.target.value);
@@ -23,7 +23,7 @@ const Stats = (props) => {
         setAdjT(e.target.value);
     }
 
-    submitData = e => {
+    const submitData = e => {
         e.preventDefault();
 
         axios
