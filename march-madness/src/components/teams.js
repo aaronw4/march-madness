@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axiosWithAuth from './axiosWithAuth';
 import Stats from './enterStats';
+import TeamStats from './teamStats';
 
 const Teams = () => {
     const [teams, setTeams] = useState([]);
@@ -61,10 +62,11 @@ const Teams = () => {
                         <p className='team teamName'>{team.name}({team.wins}-{team.loses})</p>
                     </div>
                     <div style={{display: toggle && teamId === team.id ? 'block' : 'none'}}>
-                        <Stats name={team.name}/>
+                        <Stats name={team.name} toggle={toggle}/>
                     </div>
                 </div>
             ))}
+            <TeamStats toggle={toggle}/>
         </div>
     )
 }
