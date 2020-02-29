@@ -35,7 +35,7 @@ const Stats = (props) => {
             })
             .then(res => {
                 console.log(res);
-                //toggle
+                props.setToggle(!toggle);
             })
             .catch(err => {console.log(err)
             })
