@@ -11,7 +11,7 @@ const corsOptions = {
 };
 
 server.use(express.json());
-server.use(cors())
+server.use(cors(corsOptions));
 server.use('/teams', teamsRouter);
 
 module.exports = server;
