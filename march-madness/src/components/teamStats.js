@@ -7,7 +7,7 @@ const TeamStats = (props) => {
     useEffect(() => {
         function fetchData() {
             axios
-                .get('http://localhost:4000/teams')
+                .get('https://arw-march-madness.herokuapp.com/teams')
                 .then(res => {
                     console.log(res.data);
                     setTeams(res.data);

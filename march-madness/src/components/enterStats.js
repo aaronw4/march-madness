@@ -27,7 +27,7 @@ const Stats = (props) => {
         e.preventDefault();
 
         axios
-            .post('http://localhost:4000/teams', {
+            .post('https://arw-march-madness.herokuapp.com/teams', {
                 TeamName: props.name,
                 AdjO: adjO,
                 AdjD: adjD,
