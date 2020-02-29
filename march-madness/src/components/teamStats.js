@@ -6,7 +6,7 @@ const TeamStats = (props) => {
 
     useEffect(() => {
         function fetchData() {
-            axios()
+            axios
                 .get('http://localhost:4000/teams')
                 .then(res => {
                     console.log(res.data);

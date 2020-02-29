@@ -62,7 +62,7 @@ const Teams = () => {
                         <p className='team teamName'>{team.name}({team.wins}-{team.loses})</p>
                     </div>
                     <div style={{display: toggle && teamId === team.id ? 'block' : 'none'}}>
-                        <Stats name={team.name} toggle={toggle}/>
+                        <Stats name={team.name} click={handleClick}/>
                     </div>
                 </div>
             ))}
