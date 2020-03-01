@@ -9,7 +9,13 @@ function find() {
     return db('teams')
 }
 
+function remove(id) {
+    return db('teams')
+        .where({id})
+}
+
 module.exports = {
     add,
-    find
+    find,
+    remove
 }

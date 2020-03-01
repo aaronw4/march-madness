@@ -22,6 +22,18 @@ router.get('/', (req, res) => {
         .catch(err => {
             res.status(500).json(err);
         })
+});
+
+router.delete('/', (res, req) => {
+    const {id} = req.params;
+
+    teams.remove(id)
+        .then(info => {
+            res.status(200).json({delete: info})
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
 })
 
 module.exports = router;
