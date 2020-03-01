@@ -12,6 +12,7 @@ function find() {
 function remove(id) {
     return db('teams')
         .where({id})
+        .delete()
 }
 
 module.exports = {
