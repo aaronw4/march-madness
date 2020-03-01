@@ -24,12 +24,12 @@ router.get('/', (req, res) => {
         })
 });
 
-router.delete('/:id', (res, req) => {
+router.delete('/:id', (req, res) => {
     const {id} = req.params;
 
     teams.remove(id)
-        .then(info => {
-            res.status(200).json({deleted: info})
+        .then(team => {
+            res.status(200).json({removed: team})
         })
         .catch(err => {
             res.status(500).json(err)
