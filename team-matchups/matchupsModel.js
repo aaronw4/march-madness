@@ -18,5 +18,5 @@ function remove(id) {
 module.exports = {
     add,
     find,
-    delete
+    remove
 }
