@@ -9,6 +9,19 @@ exports.up = function(knex) {
                 table.decimal('AdjD');
                 table.decimal('AdjT');
             })
+            .createTable('matchups', table => {
+                table.increments();
+                table.string('TeamName1'),
+                table.string('TeamName2'),
+                table.decimal('Pyth1'),
+                table.decimal('Pyth2'),
+                table.decimal('Odds1'),
+                table.decimal('Odds2'),
+                table.decimal('Score1'),
+                table.decimal('Score2'),
+                table.decimal('Spread'),
+                table.decimal('Total')
+            })
     )
 };
 
