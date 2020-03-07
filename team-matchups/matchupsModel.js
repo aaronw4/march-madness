@@ -10,7 +10,7 @@ function find() {
 }
 
 function remove(id) {
-    return db('mathups')
+    return db('matchups')
         .where({id})
         .delete()
 }
