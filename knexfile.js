@@ -20,7 +20,7 @@ module.exports = {
     connection: {
       database: process.env.DATABASE_URL,
       user:     'aoxnetcagsauno',
-      password: '81b3b999ba2558ee39a8b56a5919e9decc7178d69fb7ffc3d2f1920238a802ad'
+      password: 'pepsico1'
     },
     migrations: {
       directory: './data/migrations'
