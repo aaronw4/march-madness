@@ -6,12 +6,12 @@ router.post('/', (req, res) => {
     let team = req.body;
 
     teams.add(team)
-        // .then(info => {
-        //     res.status(201).json(info);
-        // })
-        // .catch(err => {
-        //     res.status(500).json(err);
-        // })
+        .then(info => {
+            res.status(201).json(info);
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        })
 });
 
 router.get('/', (req, res) => {

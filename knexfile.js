@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    client: 'pg',
+    client: 'sqlite3',
     connection: {
       filename: './data/teams.db3'
     },
