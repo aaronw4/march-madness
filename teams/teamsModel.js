@@ -1,16 +1,16 @@
 const db = require('../data/dbConfig');
 
 function add(team) {
-    return db('teams')
+    return db('postgresql-flexible-45644')
         .insert(team, 'id')
 }
 
 function find() {
-    return db('teams')
+    return db('postgresql-flexible-45644')
 }
 
 function remove(id) {
-    return db('teams')
+    return db('postgresql-flexible-45644')
         .where({id})
         .delete()
 }
