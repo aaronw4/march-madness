@@ -4,7 +4,7 @@ const teamsRouter = require('./teams/teamsRouter');
 const matchupsRouter = require('./team-matchups/matchupsRouter');
 
 const corsOptions = {
-    origin: true,
+    origin: 'https://arw-march-madness.herokuapp.com/',
     credentials: true,
     methods: ['GET', 'POST', 'DELETE']
 };
