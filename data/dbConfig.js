@@ -21,4 +21,6 @@ client.query('SELECT table_schema,table_name FROM information_schema.tables;', (
 
 const environment = process.env.DB_ENV || 'development';
 
-module.exports = knex(config[environment]);
+module.exports = {
+    Client
+}
