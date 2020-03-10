@@ -5,19 +5,27 @@ const client = new Client({
     password: '81b3b999ba2558ee39a8b56a5919e9decc7178d69fb7ffc3d2f1920238a802ad',
     host: 'ec2-184-72-235-80.compute-1.amazonaws.com',
     database: 'de2n227amjdm5g',
-    port: 5432
+    port: 5432,
+    ssl: true
 });
 
 function add(team) {
     client.connect()
         .then(() => client.query(`INSERT INTO teams VALUES(${team})`))
-        .then(() => )
+        .catch(err => console.log(err))
+        .finally(() => client.end())
+};
+
+function find() {
+    client.connect()
+        .then(() => client.query('SELECT * FROM teams'))
+        .then(results => results.rows)
         .catch(err => console.log(err))
         .finally(() => client.end())
 }
 
 module.exports = {
     add,
-    // find,
+    find,
     // remove
 }
