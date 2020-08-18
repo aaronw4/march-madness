@@ -1,4 +1,8 @@
 {
+  "name": "march-madness",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -8,27 +12,19 @@
     "pg": "^7.18.2",
     "sqlite3": "^4.2.0"
   },
-  "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js"
-  },
-  "name": "march-madness",
-  "version": "1.0.0",
-  "main": "index.js",
-  "engines": {
-    "node": "12.13"
-  },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aaronw4/march-madness.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aaronw4/march-madness/issues"
   },
-  "homepage": "https://github.com/aaronw4/march-madness#readme",
-  "description": ""
+  "homepage": "https://github.com/aaronw4/march-madness#readme"
 }
