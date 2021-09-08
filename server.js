@@ -11,4 +11,8 @@ server.use(cors());
 server.use('/teams', teamsRouter);
 server.use('/matchups', matchupsRouter);
 
+server.get("/", (req, res) => {
+    res.send("GET / Server base");
+});
+  
 module.exports = server;
