@@ -8,6 +8,7 @@ exports.up = function(knex) {
                 table.decimal('AdjO');
                 table.decimal('AdjD');
                 table.decimal('AdjT');
+                table.decimal('SOS');
             })
             .createTable('matchups', table => {
                 table.increments();
@@ -19,8 +20,12 @@ exports.up = function(knex) {
                 table.decimal('Odds2'),
                 table.decimal('Score1'),
                 table.decimal('Score2'),
+                table.decimal('SosScore1'),
+                table.decimal('SosScore2'),
                 table.decimal('Spread'),
-                table.decimal('Total')
+                table.decimal('Total'),
+                table.decimal('SosSpread'),
+                table.decimal('SosTotal')
             })
     )
 };
