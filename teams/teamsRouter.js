@@ -4,14 +4,29 @@ const router = require('express').Router();
 
 router.post('/', (req, res) => {
     let team = req.body;
-
-    teams.add(team)
-        .then(info => {
-            res.status(201).json(info);
-        })
-        .catch(err => {
-            res.status(500).json(err);
-        })
+    console.log(req)
+    if (Array.isArray(team)) {
+        teams.addMany(team)
+            .then(ids => {
+                res.status(201).json({
+                    message: `Successfully imported ${team.length} teams.`,
+                    ids: ids
+                });
+            })
+            .catch(err => {
+                console.error("Bulk Insert Error:", err);
+                res.status(500).json({ error: "Failed to import teams list.", details: err });
+            });
+    } else {
+        // Fallback to your original single-add logic
+        teams.add(team)
+            .then(info => {
+                res.status(201).json(info);
+            })
+            .catch(err => {
+                res.status(500).json(err);
+            });
+    }
 });
 
 router.get('/', (req, res) => {
